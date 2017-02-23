@@ -11,7 +11,7 @@ TURN_LEFT_TUPLE = tuple(((t[1], t[0]) for t in TURN_RIGHT_TUPLE))
 TURN_RIGHT = dict(TURN_RIGHT_TUPLE)
 TURN_LEFT = dict(TURN_LEFT_TUPLE)
 
-DEBUG = True
+DEBUG = False
 
 
 class Board(object):
@@ -92,12 +92,12 @@ class Robot(object):
             if DEBUG:
                 print('Swinging a Louie...')
             self.turn_left()
-        elif command == "R:":
+        elif command == "R":
             if DEBUG:
                 print('Hard to Starboard')
             self.turn_right()
         else:
-            raise Exception('Commands must be L, R, or M')
+            raise Exception('Commands must be L, R, or M was passed {}'.format(command))
 
 
     def move(self):
